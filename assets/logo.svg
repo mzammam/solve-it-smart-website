@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">Architecture advisory mark</title>
+  <desc id="desc">Abstract connected architecture diagram in a square mark.</desc>
+  <rect width="160" height="160" rx="24" fill="#102236"/>
+  <path d="M38 108V52l42-24 42 24v56l-42 24-42-24Z" fill="none" stroke="#f4b44d" stroke-width="8" stroke-linejoin="round"/>
+  <path d="M80 32v96M42 54l76 52M118 54l-76 52" fill="none" stroke="#3ec4b5" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="80" cy="32" r="9" fill="#f7f2e8"/>
+  <circle cx="42" cy="54" r="9" fill="#f7f2e8"/>
+  <circle cx="118" cy="54" r="9" fill="#f7f2e8"/>
+  <circle cx="42" cy="106" r="9" fill="#f7f2e8"/>
+  <circle cx="118" cy="106" r="9" fill="#f7f2e8"/>
+  <circle cx="80" cy="128" r="9" fill="#f7f2e8"/>
+</svg>
