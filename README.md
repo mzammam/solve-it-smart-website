@@ -6,6 +6,9 @@ Built with HTML5, CSS3, vanilla JavaScript and SVG. No framework, package instal
 
 Repository name: `solve-it-smart-website`.
 
+- [Website](https://mzammam.github.io/solve-it-smart-website/)
+- [GitHub repository](https://github.com/mzammam/solve-it-smart-website)
+
 ## Files
 
 - `index.html` is the English home page.
@@ -37,7 +40,7 @@ This folder is a standalone Git repository. Its GitHub remote, commit identity a
 
 In the GitHub repository, choose **Settings > Pages > Deploy from a branch**, then select **main** and **/(root)**. The `.nojekyll` file makes GitHub publish the static files directly.
 
-The initial site address is `https://YOUR-GITHUB-USERNAME.github.io/solve-it-smart-website/`. Relative links and the language switcher support both this project address and a custom domain. If you rename the repository, also update the project path in `404.html`.
+The initial site address is `https://mzammam.github.io/solve-it-smart-website/`. Relative links and the language switcher support both this project address and a custom domain. If you rename the repository, also update the project path in `404.html`.
 
 For a custom domain:
 
