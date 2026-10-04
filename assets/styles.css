@@ -81,6 +81,8 @@ li + li {
 .brand {
   display: inline-flex;
   align-items: center;
+  min-width: 0;
+  max-width: 230px;
   gap: 12px;
   color: var(--ink);
   font-weight: 800;
@@ -89,6 +91,7 @@ li + li {
 }
 
 .brand img {
+  flex-shrink: 0;
   width: 42px;
   height: 42px;
 }
@@ -103,8 +106,8 @@ li + li {
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 20px;
-  font-size: 0.94rem;
+  gap: 12px;
+  font-size: 0.875rem;
   font-weight: 700;
 }
 
@@ -120,6 +123,7 @@ li + li {
 
 .language-switcher {
   display: inline-flex;
+  flex-shrink: 0;
   align-items: center;
   gap: 4px;
   border: 1px solid var(--line);
@@ -157,8 +161,16 @@ button.button {
   font: inherit;
   font-weight: 800;
   line-height: 1.1;
+  max-width: 100%;
+  text-align: center;
+  overflow-wrap: anywhere;
   text-decoration: none;
   cursor: pointer;
+}
+
+.nav-menu a.button {
+  max-width: 12rem;
+  color: #fff;
 }
 
 .button:hover {
@@ -178,6 +190,7 @@ button.button {
 
 .nav-toggle {
   display: none;
+  flex-shrink: 0;
   width: 44px;
   height: 44px;
   border: 1px solid var(--line);
@@ -208,14 +221,17 @@ button.button {
 
 .hero-inner {
   width: min(100% - 32px, var(--max));
-  min-height: calc(100vh - 76px);
-  max-height: 820px;
+  min-height: min(660px, calc(100svh - 144px));
   margin: 0 auto;
   display: grid;
   grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
   align-items: center;
   gap: 52px;
-  padding: 76px 0 64px;
+  padding: 48px 0 56px;
+}
+
+.hero-inner > * {
+  min-width: 0;
 }
 
 .eyebrow {
@@ -236,16 +252,17 @@ h3 {
   margin: 0;
   line-height: 1.05;
   letter-spacing: 0;
+  overflow-wrap: anywhere;
 }
 
 h1 {
   max-width: 860px;
   margin-top: 0.8rem;
-  font-size: clamp(3rem, 8vw, 6.8rem);
+  font-size: 3.5rem;
 }
 
 h2 {
-  font-size: clamp(2rem, 4.5vw, 4.1rem);
+  font-size: 2.5rem;
 }
 
 h3 {
@@ -256,7 +273,7 @@ h3 {
   max-width: 740px;
   margin-top: 1.5rem;
   color: rgba(255, 255, 255, 0.84);
-  font-size: 1.22rem;
+  font-size: 1.125rem;
 }
 
 .hero-actions,
@@ -541,7 +558,7 @@ textarea {
   font-weight: 800;
 }
 
-@media (max-width: 920px) {
+@media (max-width: 1200px) {
   .nav {
     min-height: 68px;
   }
@@ -552,7 +569,7 @@ textarea {
 
   .nav-menu {
     position: absolute;
-    inset: 68px 16px auto;
+    inset: 100% 16px auto;
     display: none;
     flex-direction: column;
     align-items: stretch;
@@ -560,6 +577,8 @@ textarea {
     border: 1px solid var(--line);
     border-radius: 8px;
     padding: 12px;
+    max-height: calc(100dvh - 84px);
+    overflow-y: auto;
     background: var(--surface);
     box-shadow: var(--shadow);
   }
@@ -572,7 +591,8 @@ textarea {
     padding: 10px 8px;
   }
 
-  .nav-menu .button {
+  .nav-menu a.button {
+    max-width: none;
     margin-top: 8px;
   }
 
@@ -580,7 +600,9 @@ textarea {
     margin-top: 10px;
     width: max-content;
   }
+}
 
+@media (max-width: 920px) {
   .hero-inner,
   .split,
   .contact-panel,
@@ -595,6 +617,8 @@ textarea {
 
   .architecture-map {
     min-height: 0;
+    width: min(100%, 420px);
+    justify-self: center;
     padding: 0;
   }
 
@@ -616,7 +640,11 @@ textarea {
   }
 
   h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
   }
 
   .band,
