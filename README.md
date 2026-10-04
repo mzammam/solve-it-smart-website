@@ -6,7 +6,7 @@ Built with HTML5, CSS3, vanilla JavaScript and SVG. No framework, package instal
 
 Repository name: `solve-it-smart-website`.
 
-- [Website](https://mzammam.github.io/solve-it-smart-website/)
+- [Website](https://solveitsmart.se/)
 - [GitHub repository](https://github.com/mzammam/solve-it-smart-website)
 
 ## Files
@@ -28,10 +28,10 @@ Replace these placeholders across the site:
 - `hello@example.com`
 - `https://formspree.io/f/REPLACE_ME`
 
-If you use a custom domain, add a `CNAME` file in this folder containing only the domain name, for example:
+The `CNAME` file records the custom domain configured in GitHub Pages:
 
 ```text
-example.com
+solveitsmart.se
 ```
 
 ## GitHub Pages
@@ -40,17 +40,28 @@ This folder is a standalone Git repository. Its GitHub remote, commit identity a
 
 In the GitHub repository, choose **Settings > Pages > Deploy from a branch**, then select **main** and **/(root)**. The `.nojekyll` file makes GitHub publish the static files directly.
 
-The initial site address is `https://mzammam.github.io/solve-it-smart-website/`. Relative links and the language switcher support both this project address and a custom domain. If you rename the repository, also update the project path in `404.html`.
+The custom domain is `solveitsmart.se`. GitHub redirects the original project address, `https://mzammam.github.io/solve-it-smart-website/`, to this domain once the custom-domain configuration takes effect. Relative links and the language switcher support both addresses. If you rename the repository, also update the project path in `404.html`.
 
-For a custom domain:
+### Domain DNS at Inleed
 
-1. Register or restore the domain in an account you control.
-2. Verify domain ownership in your GitHub account's Pages settings.
-3. Configure the domain in the repository's Pages settings and add the matching `CNAME` file here.
-4. Set DNS records according to [GitHub's custom-domain guide](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site).
-5. Enable **Enforce HTTPS** when GitHub has issued the certificate.
+Keep domain registration and DNS at Inleed, with website hosting at GitHub Pages.
+In Inleed, open the domain's **Hantera > DNS / Namnservrar** settings. If a DNS zone needs to be created first, use `185.199.108.153` as its initial IPv4 address.
 
-Do not add a domain to Pages until its ownership is confirmed. Domain registration and website hosting are separate services.
+The website needs these records. `@` means the root domain, `solveitsmart.se`.
+
+| Type | Name | Value |
+| --- | --- | --- |
+| A | @ | 185.199.108.153 |
+| A | @ | 185.199.109.153 |
+| A | @ | 185.199.110.153 |
+| A | @ | 185.199.111.153 |
+| CNAME | www | mzammam.github.io |
+
+Use the default TTL, or 3600 seconds. Review and replace any conflicting website records at the root and `www`; preserve nameservers and email-related records. The CNAME target is the GitHub account hostname, without the repository name or `https://`.
+
+After the DNS changes take effect, GitHub can issue the domain's certificate. Enable **Enforce HTTPS** in the repository's Pages settings when the certificate is ready. Account-level domain verification is also available in [GitHub Pages profile settings](https://github.com/settings/pages).
+
+References: [GitHub custom-domain configuration](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site), [Inleed DNS zones](https://login.inleed.net/helpcenter/671/create-dns-zone).
 
 The language routes are:
 
